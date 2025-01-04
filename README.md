@@ -13,7 +13,7 @@ Sebelum menjalankan aplikasi ini, pastikan Anda telah menginstal perangkat lunak
 Install Dependencies
 ```bash
 python -m venv venv
-source venv/bin/activate  # Untuk Linux/macOS
+venv/bin/activate.bat  # Untuk Linux/macOS
 venv\Scripts\activate     # Untuk Windows
 ```
 ```bash
