@@ -5,10 +5,9 @@ import numpy as np
 import os
 
 app = Flask(__name__)
-app.secret_key = "supersecretkey"  # Diperlukan untuk flash messages
-model = load_model("model_wayang.h5")  # Pastikan model diload dengan benar
+app.secret_key = "supersecretkey"  
+model = load_model("model_wayang.h5")  
 
-# Daftar nama kelas dan deskripsi
 class_descriptions = {
     0: {"name": "Abimanyu", "description": "Abimanyu adalah putra Arjuna yang terkenal akan keberanian dan kecerdasannya dalam strategi perang. Ia gugur dalam perang Bharatayudha saat menghadapi formasi Cakravyuha."},
     1: {"name": "Anoman", "description": "Anoman adalah kera putih sakti dalam cerita Ramayana. Ia dikenal setia kepada Rama dan memiliki kemampuan terbang serta kekuatan luar biasa."},
@@ -27,7 +26,6 @@ class_descriptions = {
     14: {"name": "Sengkuni", "description": "Sengkuni adalah penasihat Kurawa yang licik dan penuh tipu daya. Ia sering memprovokasi Duryudana untuk melawan Pandawa."},
 }
 
-# Pastikan folder 'static/images' tersedia untuk menyimpan gambar yang diunggah
 os.makedirs("static/images", exist_ok=True)
 
 
@@ -35,33 +33,27 @@ os.makedirs("static/images", exist_ok=True)
 def index():
     if request.method == "POST":
         try:
-            # Proses file gambar
             file = request.files["imagefile"]
             if not file:
                 flash("No file selected. Please upload an image.", "danger")
                 return redirect(request.url)
 
-            # Validasi tipe file
             if not file.filename.lower().endswith((".png", ".jpg", ".jpeg")):
                 flash("Invalid file type. Please upload an image (PNG, JPG, JPEG).", "danger")
                 return redirect(request.url)
 
-            # Simpan file gambar
             filepath = os.path.join("static/images", file.filename)
             file.save(filepath)
 
-            # Preprocessing gambar
-            image = load_img(filepath, target_size=(128, 128))  # Sesuaikan ukuran dengan model Anda
+            image = load_img(filepath, target_size=(128, 128))  
             image = img_to_array(image)
             image = np.expand_dims(image, axis=0)
-            image = image / 255.0  # Normalisasi
+            image = image / 255.0  
 
-            # Prediksi menggunakan model
             predictions = model.predict(image)
-            confidence = np.max(predictions) * 100  # Confidence dalam persen
+            confidence = np.max(predictions) * 100  
             predicted_class = np.argmax(predictions)
 
-            # Tentukan kategori confidence
             if confidence >= 95:
                 confidence_category = "Sangat yakin"
             elif confidence >= 90:
@@ -73,10 +65,8 @@ def index():
             else:
                 confidence_category = "Kemungkinan besar salah"
 
-            # Ambil nama kelas dan deskripsi
             class_info = class_descriptions.get(predicted_class, {"name": "Unknown", "description": "No description available."})
 
-            # Render hasil ke template HTML
             return render_template(
                 "result.html",
                 class_name=class_info["name"],
