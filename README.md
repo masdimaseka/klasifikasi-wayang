@@ -6,8 +6,8 @@ Kelompok :
 - Krisna bayu Saputra 2201020028
 
 Sebelum menjalankan aplikasi ini, pastikan Anda telah menginstal perangkat lunak berikut:
-- Python 3.x
-- pip (Python package installer)
+- Python
+- pip
 
 ## Instalasi
 Install Dependencies
