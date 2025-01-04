@@ -1,0 +1,76 @@
+body {
+            background-color: #f9f9f9;
+}
+
+.upload-container {
+    margin-top: 10%;
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Beri sudut melengkung */
+    background-color:rgb(255, 255, 255); /* Warna latar belakang */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.container {
+            margin-top: 50px;
+}
+
+.result-card {
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.confidence-very-high {
+    background-color: #d4edda; /* Hijau muda */
+    color: #155724;
+}
+
+.confidence-high {
+    background-color: #fff3cd; /* Kuning */
+    color: #856404;
+}
+
+.confidence-moderate {
+    background-color: #cce5ff; /* Biru muda */
+    color: #004085;
+}
+
+.confidence-low {
+    background-color: #f8d7da; /* Merah muda */
+    color: #721c24;
+}
+
+.confidence-very-low {
+    background-color: #f5c6cb; /* Merah lebih gelap */
+    color: #721c24;
+}
+
+.image-container {
+    text-align: right;
+    margin-bottom: 50px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    padding: 10px 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.back-button {
+    margin-top: 20px;
+    text-align: center;
+}
