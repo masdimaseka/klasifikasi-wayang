@@ -1,9 +1,10 @@
 {
     "version": 2,
     "builds": [
-        {"src": "app.py", "use": "@vercel/python","config": {"runtime": "python3.10"}}
+        {"src": "app.py", "use": "@vercel/python"}
     ],
     "routes": [
         {"src": "/( .* )", "dest": "app.py"}
-    ]
+    ],
+    "pythonVersion": "3.10"
 }
