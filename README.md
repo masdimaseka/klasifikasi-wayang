@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/236e967d-8da5-4035-bc3a-b4bed0da9932)# Klasifikasi Gambar Wayang
+# Klasifikasi Gambar Wayang
 
 Kelompok : 
 Dimas Eka Putra Sahtio 2201020033
