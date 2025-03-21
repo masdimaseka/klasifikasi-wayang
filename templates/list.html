@@ -39,15 +39,14 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a
-                  class="nav-link active text-white fw-bold"
-                  aria-current="page"
-                  href="/"
+                <a class="nav-link text-white" aria-current="page" href="/"
                   >Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="/list">List Wayang</a>
+                <a class="nav-link text-white active fw-bold" href="/list"
+                  >List Wayang</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="/about">About</a>
@@ -57,28 +56,17 @@
         </div>
       </nav>
 
-      <div class="container container-modal2">
+      <div class="container container-modal pb-5">
         <div class="upload-modal">
-          <h1 class="fw-bold">AI Mengenali Wayang Indonesia</h1>
-          <p class="mb-4">
-            Implementasi teknologi kecerdasan buatan untuk mengenali karakter
-            wayang dari gambar yang unggah. Unggah gambar untuk dapat mengetahui
-            nama tokoh wayang beserta kisahnya. Temukan lebih banyak tentang
-            warisan budaya Indonesia dengan teknologi modern!
-          </p>
-          <form action="/" method="POST" enctype="multipart/form-data">
-            <div class="mb-3">
-              <input
-                type="file"
-                class="form-control"
-                id="imagefile"
-                name="imagefile"
-                accept="image/*"
-                required
-              />
+          <h1 class="text-center mb-4">Daftar Wayang</h1>
+          {% for key, value in wayang_list.items() %}
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">{{ loop.index }}. {{ value.name }}</h5>
+              <p class="card-text">{{ value.description }}</p>
             </div>
-            <button type="submit" class="btn btn-primary">Kenali Wayang</button>
-          </form>
+          </div>
+          {% endfor %}
         </div>
       </div>
     </div>

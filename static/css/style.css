@@ -1,75 +1,96 @@
 body {
-            background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
-.upload-container {
-    margin-top: 10%;
-    max-width: 1000px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px; /* Beri sudut melengkung */
-    background-color:rgb(255, 255, 255); /* Warna latar belakang */
+.backgroundLP {
+  background-image: url("../assets/Background.png");
+  background-size: cover;
+  height: 100vh;
+}
+
+.container-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6vh;
+}
+
+.container-modal2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6vh;
+  height: 75vh;
+}
+
+.upload-modal {
+  max-width: 1000px;
+  width: 100%;
+  padding: 40px 64px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border: none;
-}
-
-.container {
-            margin-top: 50px;
+  background-color: #007bff;
+  padding: 10px 20px;
+  border: none;
 }
 
 .result-card {
-    padding: 20px;
-    border-radius: 10px;
-    position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
 }
 
 .confidence-very-high {
-    background-color: #d4edda; /* Hijau muda */
-    color: #155724;
+  background-color: #d4edda;
+  color: #155724;
 }
 
 .confidence-high {
-    background-color: #fff3cd; /* Kuning */
-    color: #856404;
+  background-color: #fff3cd;
+  color: #856404;
 }
 
 .confidence-moderate {
-    background-color: #cce5ff; /* Biru muda */
-    color: #004085;
+  background-color: #cce5ff;
+  color: #004085;
 }
 
 .confidence-low {
-    background-color: #f8d7da; /* Merah muda */
-    color: #721c24;
+  background-color: #f8d7da;
+  color: #721c24;
 }
 
 .confidence-very-low {
-    background-color: #f5c6cb; /* Merah lebih gelap */
-    color: #721c24;
+  background-color: #f5c6cb;
+  color: #721c24;
 }
 
 .image-container {
-    text-align: right;
-    margin-bottom: 50px;
+  text-align: right;
+  margin-bottom: 50px;
 }
 
 .btn-secondary {
-    background-color: #6c757d;
-    border: none;
-    padding: 10px 20px;
+  background-color: #6c757d;
+  border: none;
+  padding: 10px 20px;
 }
 
 .btn-secondary:hover {
-    background-color: #5a6268;
+  background-color: #5a6268;
 }
 
 .back-button {
-    margin-top: 20px;
+  margin-top: 20px;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
 }
